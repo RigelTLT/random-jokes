@@ -1,11 +1,14 @@
 import i18Obj from "./translate.js";
 const url = 'https://api.icndb.com/jokes/random';
 let language = 'en';
+const jokeContainer = document.querySelector('.joke');
+window.addEventListener("beforeunload", setLocalStorage);
+window.addEventListener("load", getLocalStorage);
 
 function setLocalStorage() {
     localStorage.setItem("language", language);
 }
-window.addEventListener("beforeunload", setLocalStorage);
+
 
 function getLocalStorage() {
     if (localStorage.getItem("language")) {
@@ -13,12 +16,11 @@ function getLocalStorage() {
         getTranslate(language);
     }
 }
-window.addEventListener("load", getLocalStorage);
+
 async function getData() {
     const res = await fetch(url);
     const data = await res.json();
     const joke = document.querySelector('h2');
-    const jokeContainer = document.querySelector('.joke');
     jokeContainer.style.opacity = '1';
     jokeContainer.style.visibility = 'visible';
     jokeContainer.style.animation = 'null';
@@ -31,7 +33,6 @@ async function getQuotes() {
     const res = await fetch(quotes);
     const data = await res.json();
     const joke = document.querySelector('h2');
-    const jokeContainer = document.querySelector('.joke');
     jokeContainer.style.opacity = '1';
     jokeContainer.style.visibility = 'visible';
     jokeContainer.style.animation = 'null';
@@ -67,6 +68,9 @@ function changeLanguage(event) {
             (index.textContent =
                 i18Obj[event.target.dataset.i18][index.dataset.i18])
         );
+        jokeContainer.style.opacity = '0';
+        jokeContainer.style.visibility = 'hidden';
+        jokeContainer.style.animation = 'fadein 2s ease-in alternate infinite';
     }
 }
 
