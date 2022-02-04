@@ -25,7 +25,6 @@ async function getData() {
     jokeContainer.style.visibility = 'visible';
     jokeContainer.style.animation = 'null';
     joke.textContent = data.value.joke;
-    console.log(data.value.joke);
 }
 
 async function getQuotes() {
@@ -37,7 +36,6 @@ async function getQuotes() {
     jokeContainer.style.visibility = 'visible';
     jokeContainer.style.animation = 'null';
     joke.textContent = data[getRandom(101)].text;
-    console.log(data[getRandom(101)].text);
 }
 
 function getRandom(maxValue) {
