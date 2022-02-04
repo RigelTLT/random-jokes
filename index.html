@@ -1,36 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/ico/icons850.ico">
     <title>Randome Jokes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
-      <header>
-        <div class="title">
-          <h1>Randome Jokes</h1>
-        </div>
-      </header>
-      <main class="main">
-        <div class="image-main">
-          <img class="grumpy-img" src="./assets/img/grumpy-cat.png" />
-        </div>
-        <div class="button">
-            <button class="cybr-btn">
+        <header class="header">
+            <div class="title">
+                <h1 data-i18="title">Randome Jokes</h1>
+                <img class="title__icon" src="./assets/svg/jester-joker.svg" alt="icon joker" />
+            </div>
+            <div class="language">
+                <ol class="language__items">
+                    <li class="language__item">
+                        <span class="link__language en active__language" data-i18="en">EN</span>
+                    </li>
+                    <li class="language__item">
+                        <span class="link__language ru" data-i18="ru">RU</span>
+                    </li>
+                </ol>
+            </div>
+        </header>
+        <main class="main">
+            <div class="image__joke">
+                <img class="grumpy-img" src="./assets/img/grumpy-cat.png" alt="grumpy cat" />
+                <div class='joke'>
+                    <h2 data-i18="joke">click on the button to see the joke</h2>
+                </div>
+            </div>
+            <div class="button">
+                <button class="joke-btn" data-i18="button">
                 get a joke<span aria-hidden></span>
-                <span aria-hidden class="cybr-btn__glitch">get a joke</span>
+                <span aria-hidden class="joke-btn__glitch" data-i18="button">get a joke</span>
               </button>
-        </div>
-        <div class="joke-container"><h2>Randome Jokes</h2></div>
-        <div class="image-bottom">
-          <img class="cat-bottom" src="./assets/img/cat_sidit.png" />
-        </div>
-      </main>
-      <footer></footer>
+            </div>
+            <div class="image-bottom">
+                <img class="cat-bottom" src="./assets/img/cat_sidit.png" alt="cat" />
+            </div>
+        </main>
+        <footer>
+            <div class="footer__container">
+                <div class="container__git">
+                    <span class="footer__text">©</span>
+                    <span class="footer__text">2022</span>
+                    <a class="footer__link" href="https://github.com/RigelTLT">
+              github
+            </a>
+                </div>
+                <div class="container__rs">
+                    <a href="https://rs.school/js-stage0/"><img class="footer__img" src="https://rs.school/images/rs_school_js.svg" alt="Scopes School" /> </a>
+
+                </div>
+            </div>
+        </footer>
     </div>
-    <script type="text/javascript" src="index.js"></script>
-  </body>
+    <script language="JavaScript" type="module" src="index.js"></script>
+</body>
+
 </html>
