@@ -4,6 +4,7 @@ let language = 'en';
 const jokeContainer = document.querySelector('.joke');
 window.addEventListener("beforeunload", setLocalStorage);
 window.addEventListener("load", getLocalStorage);
+preloadImages()
 
 function setLocalStorage() {
     localStorage.setItem("language", language);
@@ -17,6 +18,15 @@ function getLocalStorage() {
     }
 }
 
+function preloadImages() {
+    for (let i = 1; i <= 6; i++) {
+        const img = new Image();
+        const seasons = ["cat_lechit", "cat_left", "cat_right", "cat_sidit", "grumpy-cat"];
+        seasons.forEach(
+            (indexSeasons) => (img.src = `./assets/img/${i}.png`)
+        );
+    }
+}
 async function getData() {
     const res = await fetch(url);
     const data = await res.json();
