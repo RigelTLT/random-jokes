@@ -23,7 +23,7 @@ function preloadImages() {
         const img = new Image();
         const seasons = ["cat_lechit", "cat_left", "cat_right", "cat_sidit", "grumpy-cat"];
         seasons.forEach(
-            (indexSeasons) => (img.src = `./assets/img/${i}.png`)
+            (i) => (img.src = `./assets/img/${i}.png`)
         );
     }
 }
