@@ -22,7 +22,6 @@ function preloadImages() {
     for (let i = 1; i <= 5; i++) {
         const img = new Image();
         const cats = ["cat_lechit", "cat_left", "cat_right", "cat_sidit", "grumpy-cat"];
-        console.log(cats)
         cats.forEach(
             (i) => (img.src = `./assets/img/${i}.png`)
             
@@ -117,7 +116,6 @@ function changeCat() {
     if (getComputedStyle(cat).transform.includes('1, 500,')) {
         catLeft();
     }
-    console.log(getComputedStyle(cat).transform);
 }
 
 function catRigth() {
