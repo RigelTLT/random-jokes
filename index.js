@@ -117,10 +117,11 @@ function changeCat() {
     if (getComputedStyle(cat).transform.includes('1, 500,')) {
         catLeft();
     }
+    console.log(getComputedStyle(cat).transform);
 }
 
 function catRigth() {
-    cat.src = '/assets/img/cat_right.png';
+    cat.src = './assets/img/cat_right.png';
     cat.style.transform = 'translateX(200%)';
     randomCat = getRandom(2);
     if (randomCat === 0) {
@@ -129,11 +130,11 @@ function catRigth() {
     if (randomCat === 1) {
         catForm = 'cat_sidit.png';
     }
-    setTimeout(() => cat.src = `/assets/img/${catForm}`, 2500);
+    setTimeout(() => cat.src = `./assets/img/${catForm}`, 2500);
 }
 
 function catLeft() {
-    cat.src = '/assets/img/cat_left.png';
+    cat.src = './assets/img/cat_left.png';
     cat.style.transform = 'translateX(-200%)';
     randomCat = getRandom(2);
     if (randomCat === 0) {
@@ -142,7 +143,7 @@ function catLeft() {
     if (randomCat === 1) {
         catForm = 'cat_sidit.png';
     }
-    setTimeout(() => cat.src = `/assets/img/${catForm}`, 2500);
+    setTimeout(() => cat.src = `./assets/img/${catForm}`, 2500);
 }
 const languageList = document.querySelector(".language__items");
 languageList.addEventListener("click", changeLanguage);
